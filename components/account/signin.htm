@@ -30,9 +30,10 @@
         </div>
     </div>
     {% endif %}
+    <div class="form-group">
+        {% component 'captcha' %}
+    </div>
     
-    {% component 'captcha' %}
-
     <button type="submit" class="btn btn-default">Sign in</button>
 
 {{ form_close() }}
