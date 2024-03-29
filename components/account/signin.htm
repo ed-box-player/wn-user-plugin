@@ -31,14 +31,16 @@
     </div>
     {% endif %}
     
-    <p align="right">
-		or sign in with
-        {% for name, link in social_login_links %}
-        <a href="{{ link }}">{{ name }}</a>
-        {# <a href="{{ link }}" class="text-muted"><i class="fa icon-'. strtolower({{ name }}) .'" aria-hidden="true" title="{{ name }}">{{ name }}</i></a> #}
-        {% endfor %}
-	</p>
+    {% component 'captcha' %}
 
     <button type="submit" class="btn btn-default">Sign in</button>
 
 {{ form_close() }}
+
+<p align="right">
+    or sign in with
+    {% for name, link in social_login_links %}
+    <a href="{{ link }}">{{ name }}</a>
+    {# <a href="{{ link }}" class="text-muted"><i class="fa icon-'. strtolower({{ name }}) .'" aria-hidden="true" title="{{ name }}">{{ name }}</i></a> #}
+    {% endfor %}
+</p>
